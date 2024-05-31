@@ -29,6 +29,9 @@
         <li class="nav-item">
             <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/pierre_papier_ciseaux.php')echo 'active';  ?>" href="pierre_papier_ciseaux.php">Ja-ken-pon</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/ciblaim.php')echo 'active';  ?>" aria-current="page" href="ciblaim.php">Ciblaim</a>
+        </li>
       </ul>
     </div>
 </nav>
