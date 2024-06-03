@@ -67,16 +67,18 @@ function draw (){
             context.fillStyle = "green"
             context.fillRect(missile[i].x, missile[i].y, box, box)
             if((ennemis.x == missile[i].x && ennemis.y == missile[i].y) || (ennemis.x == missile[i].x && ennemis.y == missile[i].y + box) || (ennemis.x == missile[i].x && ennemis.y == missile[i].y - box) ){
-                ennemis = {
-                    x: Math.floor(Math.random()*38+1)*box,
-                    y: 1*box
-                }
-                score++
-                check++
-                if(check == 5 && A>2){
-                    A--
-                    check = 0
-                }
+                    ennemis = {
+                        x: Math.floor(Math.random()*38+1)*box,
+                        y: 1*box
+                    }
+
+                    score++
+                    check++
+
+                    if(check == 5 && A>2){
+                        A--
+                        check = 0
+                    }
             } 
         }
     }
@@ -86,19 +88,24 @@ function draw (){
             x: vaissaux.x,
             y: vaissaux.y
         }
+
         N++
-        if(N==25){
+
+        if(N==20){
             N = 0
         }
+
         tire = 0}
         
         Temps++
+        
         if(Temps>=A){
-        ennemis.y += box
-        Temps = 0} 
+            ennemis.y += box
+            Temps = 0} 
         
         context.fillStyle = "red"
         context.fillRect(ennemis.x, ennemis.y, box, box)
+       
         if(ennemis.y == canvas.height){
             alert('you loose\nscore : '+score)
             location.reload()

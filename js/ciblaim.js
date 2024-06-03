@@ -57,7 +57,7 @@ canvas.onclick = function (event){
     context.fillStyle= "green"
     context.font = "30px Arial"
     context.fillText("Score:"+score, 34*box, 1.6*box)
-    context.fillText("rater:"+chock-1, 34*box, 3.6*box)
+    context.fillText("rater:"+(chock-1), 34*box, 3.6*box)
     context.fillText("timer:"+temps, 34*box, 5.6*box)
 }
 
@@ -68,11 +68,11 @@ function draw() {
     context.fillStyle= "green"
     context.font = "30px Arial"
     context.fillText("Score "+score, 34*box, 1.6*box)
-    context.fillText("rater:"+chock, 34*box, 3.6*box)
+    context.fillText("rater:"+(chock-1), 34*box, 3.6*box)
     temps--
     context.fillText("timer:"+temps, 34*box, 5.6*box)
     if(temps==0){
-        alert('Score: '+score+'\nchock :'+chock-1+'\ncible par seconde :'+score/60)
+        alert('Score: '+score+'\nchock :'+(chock-1)+'\ncible par seconde :'+score/60)
         location.reload()
     }
   }
