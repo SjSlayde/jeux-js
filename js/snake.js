@@ -12,7 +12,7 @@ let timeforspeed = 0
 
 // Initialisation du serpent
 let snake = []
-snake[0] = {x: 10*box, y: 10*box}
+snake[0] = {x: 20*box, y: 12*box}
 
 // Initialisation de la nourriture
 let food = {
