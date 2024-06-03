@@ -5,6 +5,11 @@ const context = canvas.getContext("2d")
 // Définition de la taille de la grille
 let box = 20
 
+//vitesse du jeux
+let speed = 110
+//temps avant la prochaine acceleration
+let timeforspeed = 0
+
 // Initialisation du serpent
 let snake = []
 snake[0] = {x: 10*box, y: 10*box}
@@ -38,15 +43,21 @@ function direction(event){
         d = "DOWN"
     }
     // Appel de la fonction de dessin avec la nouvelle direction
-    if(start==0){
-        start++
-    // Initialisation de l'intervalle de jeu
-    let game = setInterval(draw, 100)}
+    // if(start==0){
+    //     start++
+    // // Initialisation de l'intervalle de jeu
+    // let game = setInterval(draw, speed)}
+    if(timeforspeed>=10){
+        speed -= 10
+        timeforspeed = 0
+        clearInterval(game);
+        game = setInterval(draw, speed)
+    }
 }
 //sert juste a eviter les erreur pour l'instant
-let game = setInterval(draw, 100)
 let snakeX 
 let snakeY 
+let game = setInterval(draw, speed)
 
 
 // Fonction de dessin
@@ -81,6 +92,7 @@ function draw (){
         }
 
     if(snakeX == food.x && snakeY == food.y){
+        timeforspeed++
         score++;
         food = {
             x: Math.floor(Math.random()*38+1)*box,
@@ -98,8 +110,9 @@ function draw (){
 
     // Affichage du score
     context.fillStyle= "red"
-    context.font = "30px Arial"
-    context.fillText(score, 2*box, 1.6*box)
+    context.font = "20px Arial"
+    context.fillText('Score :'+score, 2*box, 1.6*box)
+    context.fillText('Speed :'+(10-timeforspeed), 2*box, 3.2*box)
     
     // Vérification de la collision avec les bords de l'écran
    if(snakeX < 0 || snakeY < 0 || snakeX > canvas.width-box || snakeY > canvas.height-box || collision(newHead, snake)){
