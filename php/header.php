@@ -27,15 +27,18 @@
             <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/morpion.php')echo 'active';  ?>" href="morpion.php">Morpion</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/pierre_papier_ciseaux.php')echo 'active';  ?>" href="pierre_papier_ciseaux.php">Ja-ken-pon</a>
+            <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/pierre_papier_ciseaux.php')echo 'active';  ?>" href="pierre_papier_ciseaux.php">Chifoumi</a>
         </li>
         <li class="nav-item">
           <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/ciblaim.php')echo 'active';  ?>" aria-current="page" href="ciblaim.php">Ciblaim</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/spaceinvader.php')echo 'active';  ?>" aria-current="page" href="spaceinvader.php">Space invader</a>
+        </li>
       </ul>
     </div>
 </nav>
-<!-- <div class="image_banniere">
+<div class="image_banniere d-md-none">
     <img src="../image/banniere2.jpg" id="banniere" alt="baniere" class="img-fluid">
-</div> -->
+</div>
 </header>
