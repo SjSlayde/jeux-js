@@ -1,0 +1,118 @@
+1. Contexte du projet
+Le projet consiste à refondre un site web existant de type canvas interactif développé initialement en PHP sans framework. L'objectif est de :
+
+Moderniser l'architecture du projet en le basant sur le framework Symfony.
+
+Ajouter une base de données relationnelle pour stocker les données utilisateur, les créations canvas, et les métadonnées associées.
+
+Améliorer la maintenabilité, extensibilité et la sécurité du site.
+
+2. Objectifs
+Reproduire les fonctionnalités actuelles du canvas.
+
+Intégrer une authentification utilisateur.
+
+Sauvegarder les dessins réalisés sur le canvas dans la base de données.
+
+Permettre la consultation, modification et suppression des créations.
+
+Créer une interface utilisateur propre et moderne (optionnellement avec du front moderne comme Vue.js ou Stimulus).
+
+3. Fonctionnalités principales
+3.1 Espace Canvas
+Interface de dessin (HTML5 <canvas> + JS).
+
+Outils de dessin de base : crayon, gomme, couleurs, taille.
+
+Fonction "Effacer tout".
+
+Fonction "Sauvegarder".
+
+3.2 Gestion des utilisateurs
+Inscription / Connexion / Déconnexion.
+
+Gestion de profil (email, mot de passe).
+
+Accès restreint à certaines fonctionnalités (ex : sauvegarde seulement pour les utilisateurs connectés).
+
+3.3 Galerie personnelle
+Liste des dessins enregistrés par l'utilisateur.
+
+Affichage de l’image (via image ou rendu canvas).
+
+Boutons : Voir, Supprimer, Modifier.
+
+3.4 Administration (optionnel)
+Interface de gestion des utilisateurs (activer/désactiver).
+
+Modération des dessins.
+
+4. Architecture technique souhaitée
+4.1 Backend
+Framework : Symfony 6.x ou 7.x
+
+Langage : PHP 8.2+
+
+ORM : Doctrine
+
+Sécurité : Authentification via Symfony Security
+
+4.2 Base de données
+SGBD : MySQL ou PostgreSQL
+
+Tables principales :
+
+user : id, email, password, roles, created_at
+
+drawing : id, user_id, title, image_data (base64 ou lien fichier), created_at
+
+4.3 Frontend
+HTML/CSS/JS natif ou avec Stimulus.js.
+
+Intégration Bootstrap ou TailwindCSS (optionnel).
+
+Possibilité de séparation front-end (Vue.js ou React en SPA) si prévu à l'avenir.
+
+5. Contraintes
+Respect des normes PSR (Symfony).
+
+Code commenté, clair et versionné (Git).
+
+Responsive design.
+
+Pas de dépendance à un CMS.
+
+6. Livrables attendus
+Code source Symfony complet.
+
+Structure de base de données SQL.
+
+Documentation technique :
+
+Installation.
+
+Utilisation.
+
+Architecture.
+
+Scripts d’import éventuel des anciennes données (si existantes).
+
+7. Planning estimatif (indicatif)
+Étape	Durée estimée
+Audit et analyse de l’existant	2 jours
+Création base projet Symfony	1 jour
+Intégration canvas	3 jours
+Authentification utilisateurs	2 jours
+Sauvegarde des dessins	2 jours
+Galerie et CRUD dessins	3 jours
+Tests et validation	2 jours
+Documentation	1 jour
+
+8. Évolutions possibles
+Collaboration en temps réel (socket, WebRTC).
+
+Partage public des créations.
+
+Export PNG / SVG.
+
+IA de suggestion ou amélioration de dessins.
