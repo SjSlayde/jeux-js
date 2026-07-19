@@ -1,56 +1,3 @@
-/* #banniere {
-    width: 100%;
-    height: 300px;
-} */
-
-/* #backgroundbody {
-    background-image: url('../image/image_corp.png');
-    background-size: 100vw;
-    height: 100vh;
-} */
-
-/* .col-4 {
-    border: 1px solid;
-}
-
-canvas {
-    position: relative;
-    top: 55%;
-    left: 40%;
-    border: 10px solid black;
-}
-
-#boardsnake {
-    position: relative;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-#porte-carte  {
-    width: 100vw;
-    position: relative;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-#boards-Pierre  {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-} */
-
-/* faut modifier la couleur */
-/* #boardgame {
-    background-color: white;
-} */
-
-
 body{
 
     background:#090b13;
@@ -80,6 +27,8 @@ body{
     width:100%;
     height:100%;
 
+    /* background-image: url(../image/bannierev2.png) ;
+    background-size: cover; */
     background:
     radial-gradient(circle at top,#183b69,#090b13);
 
@@ -572,5 +521,121 @@ canvas{
     font-weight:bold;
 
     font-size:20px;
+
+}
+
+.choice-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+.choice{
+
+
+    width:130px;
+
+    height:130px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#111;
+
+    color:white;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+
+}
+
+
+.choice span{
+
+    display:block;
+
+    font-size:18px;
+
+}
+
+
+
+.choice:hover{
+
+    transform:translateY(-10px);
+
+    background:#72ff65;
+
+    color:#111;
+
+}
+
+
+
+
+#main{
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+}
+
+
+
+#resultat{
+
+    width:100%;
+
+    height:150px;
+
+    background:#111;
+
+    color:white;
+
+    border-radius:10px;
+
+    resize:none;
+
+}
+
+canvas{
+
+    background:
+    radial-gradient(
+        circle,
+        #101020,
+        #000
+    );
+
+
+    border-radius:20px;
+
+
+    border:
+    2px solid rgba(114,255,101,.3);
+
+
+}
+
+
+#score{
+
+    font-size:40px;
+
+    color:#72ff65;
+
+    font-weight:bold;
 
 }

@@ -1,112 +1,125 @@
-var pierre = document.getElementById("pierre")//1
-var papier = document.getElementById("papier")//2
-var ciseaux = document.getElementById("ciseaux")//3
-var reset = document.getElementById("reset")
-var resultat = document.getElementById("resultat")//ciseaux<=pierre<=papier<=ciseaux
-var loose=0,win=0,egality=0//3<=2<=1
-var BO,round=0
-    BO=parseInt(prompt('nombre de round'))
-    console.log(Math.floor(BO/2)+1)
+const boutons = {
+    pierre: document.getElementById("pierre"),
+    papier: document.getElementById("papier"),
+    ciseaux: document.getElementById("ciseaux")
+};
 
-    papier.addEventListener('click', function (){
-        joueur=1
-        round++
-        test(joueur)
-        resultat.value+="\nround : "+round
-        resultat.value+="\nnombre de loose : "+loose
-        resultat.value+="\nnombre d'égality : "+egality
-        resultat.value+="\nnombre de win : "+win
-        if(round==BO){
-            if(loose<win){
-                alert("GG vous avez gagner");
-            }
-            else if(loose>win){
-                alert('Vous avez perdue');
-            }
-            else if(loose == win){
-                alert("égalité");
-            }
-        }
-    })
-    
-    pierre.addEventListener('click', function (){
-        joueur=2
-        round++
-        test(joueur)
-        resultat.value+="\nround : "+round
-        resultat.value+="\nnombre de loose : "+loose
-        resultat.value+="\nnombre d'égality : "+egality
-        resultat.value+="\nnombre de win : "+win
-        if(round==BO){
-            if(loose<win){
-                alert("GG vous avez gagner");
-            }
-            else if(loose>win){
-                alert('Vous avez perdue');
-            }
-            else if(loose == win){
-                alert("égalité");
-            }
-        }
-    })
 
-    ciseaux.addEventListener('click', function (){
-        joueur=3
-        round++
-        test(joueur)
-        resultat.value+="\nround : "+round
-        resultat.value+="\nnombre de loose : "+loose
-        resultat.value+="\nnombre d'égality : "+egality
-        resultat.value+="\nnombre de win : "+win
-        if(round==BO){
-            if(loose<win){
-                alert("GG vous avez gagner")
-            }
-            else if(loose>win){
-                alert('Vous avez perdue')
-            }
-            else if(loose == win){
-                alert("égalité")
-            }
-        }
-    })
+const main = document.getElementById("main");
 
-    reset.addEventListener('click',function (){
-        BO=parseInt(prompt('nombre de round'))
-        console.log(Math.floor(BO/2)+1)
-    })
+const resultat = document.getElementById("resultat");
 
-function test(joueur){
-    mainordisigne= document.getElementById("main")
-    let ordi = Math.floor(Math.random(1) *3)+1
-    
-    if(ordi==1){
-        ordimain="papier"
-        mainordisigne.src="../image/papier.jpeg"
+
+let win = 0;
+let loose = 0;
+let egality = 0;
+
+
+
+Object.keys(boutons).forEach(choix => {
+
+
+    boutons[choix].onclick = ()=>{
+
+        jouer(choix);
+
     }
 
-    else if(ordi==2){
-        ordimain="pierre"
-        mainordisigne.src="../image/pierre.jpg"
+
+});
+
+
+
+
+function jouer(joueur){
+
+
+    const choixOrdi = [
+        "pierre",
+        "papier",
+        "ciseaux"
+    ][Math.floor(Math.random()*3)];
+
+
+    if (choixOrdi == "pierre") {
+        main.innerHTML = "🪨";
+    } else if (choixOrdi == "ciseaux") {
+        main.innerHTML = "✂️";
+    }else  {
+        main.innerHTML = "📄";
     }
+
+    let resultatRound;
+
+
+
+    if(joueur == choixOrdi){
+
+        egality++;
+
+        resultatRound="Egalité";
+
+    }
+
+
+    else if(
+
+        (joueur=="pierre" && choixOrdi=="ciseaux") ||
+        (joueur=="papier" && choixOrdi=="pierre") ||
+        (joueur=="ciseaux" && choixOrdi=="papier")
+
+    ){
+
+        win++;
+
+        resultatRound="Victoire";
+
+    }
+
 
     else{
-        ordimain="ciseaux"
-        mainordisigne.src="../image/ciseaux.jpg"
-    }
-    
-    if(ordi==joueur){
-        resultat.value="l'ordi joue : "+ordimain
-        resultat.value+="\negaliy";return egality++
+
+        loose++;
+
+        resultatRound="Défaite";
+
     }
 
-    else if (ordi== joueur - 1|| (ordi == 3 && joueur == 1)){
-        resultat.value="l'ordi joue : "+ordimain
-        resultat.value+="\nyou loose";return loose++
-    }
 
-    else{
-        resultat.value="l'ordi joue : "+ordimain
-        resultat.value+="\nyou win";return win++
-    }
+
+    resultat.value =
+    "Vous : "+joueur+
+    "\nOrdinateur : "+choixOrdi+
+    "\nRésultat : "+resultatRound+
+    "\n\n"+
+    resultat.value;
+
+
+
+    document.getElementById("win").textContent=win;
+    document.getElementById("loose").textContent=loose;
+    document.getElementById("egalite").textContent=egality;
+
+
+}
+
+
+
+
+
+document.getElementById("reset").onclick=function(){
+
+
+    win=0;
+    loose=0;
+    egality=0;
+
+
+    document.getElementById("win").textContent=0;
+    document.getElementById("loose").textContent=0;
+    document.getElementById("egalite").textContent=0;
+
+
+    resultat.value="";
+
 }

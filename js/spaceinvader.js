@@ -32,17 +32,18 @@ let N = 0
 //score
 let score = 0
 
-context.fillStyle = "red"
-context.fillRect(vaissaux.x, vaissaux.y, box, box)
+// context.fillStyle = "red"
+// context.fillRect(vaissaux.x, vaissaux.y, box, box)
+drawShip();
 
 
 document.addEventListener("keydown",direction);
 
 function direction(event){
     let key = event.keyCode;
-    if(key == 37){
+    if(key == 37 && vaissaux.x > 0){
         vaissaux.x -= box;
-    } else if (key == 39){
+    } else if (key == 39 && vaissaux.x < canvas.width-box){
         vaissaux.x += box
     } else if (key == 38){
         tire++
@@ -58,9 +59,9 @@ function direction(event){
 function draw (){
     // Effacement de l'écran
     context.clearRect(0 , 0 , 800, 500)
-
-    context.fillStyle = "blue"
-    context.fillRect(vaissaux.x, vaissaux.y, box, box)
+    drawShip();
+    // context.fillStyle = "blue"
+    // context.fillRect(vaissaux.x, vaissaux.y, box, box)
     if(missile[0]!=undefined){
         for(let i = 0;i<missile.length;i++){
             missile[i].y -= box 
@@ -115,3 +116,31 @@ function draw (){
         context.font = "20px Arial"
         context.fillText("Score "+score, 34*box, 1.6*box)
     }
+
+    function drawShip(){
+
+    context.fillStyle="#00ffff";
+
+    context.beginPath();
+
+    context.moveTo(
+        vaissaux.x + box/2,
+        vaissaux.y
+    );
+
+
+    context.lineTo(
+        vaissaux.x,
+        vaissaux.y+box
+    );
+
+
+    context.lineTo(
+        vaissaux.x+box,
+        vaissaux.y+box
+    );
+
+
+    context.fill();
+
+}

@@ -38,7 +38,4 @@
       </ul>
     </div>
 </nav>
-<div class="image_banniere d-md-none">
-    <img src="../image/banniere2.jpg" id="banniere" alt="baniere" class="img-fluid">
-</div>
 </header>

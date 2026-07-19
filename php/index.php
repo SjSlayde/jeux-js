@@ -186,7 +186,7 @@ require_once("header.php");
                     <h3>Space Invader</h3>
 
                     <p>
-                        Prochainement disponible.
+                        Venez défendre la planète.
                     </p>
 
                     <button class="btn btn-outline-light">
