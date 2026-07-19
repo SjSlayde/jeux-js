@@ -10,7 +10,7 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Jeux Js</a>
+    <a class="navbar-brand ms-2" href="/php/index.php">Canvas Arcade</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

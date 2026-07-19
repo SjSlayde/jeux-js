@@ -111,9 +111,9 @@ function draw (){
     // Affichage du score
     context.fillStyle= "red"
     context.font = "20px Arial"
-    context.fillText('Score :'+score, 2*box, 1.6*box)
-    context.fillText('Speed :'+(10-timeforspeed), 2*box, 3.2*box)
-    
+    // context.fillText('Score :'+score, 2*box, 1.6*box)
+    // context.fillText('Speed :'+(10-timeforspeed), 2*box, 3.2*box)
+    document.getElementById("score").innerHTML = score;
     // Vérification de la collision avec les bords de l'écran
    if(snakeX < 0 || snakeY < 0 || snakeX > canvas.width-box || snakeY > canvas.height-box || collision(newHead, snake)){
     location.reload()

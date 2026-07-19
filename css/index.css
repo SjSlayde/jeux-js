@@ -3,13 +3,13 @@
     height: 300px;
 } */
 
-#backgroundbody {
+/* #backgroundbody {
     background-image: url('../image/image_corp.png');
     background-size: 100vw;
     height: 100vh;
-}
+} */
 
-.col-4 {
+/* .col-4 {
     border: 1px solid;
 }
 
@@ -43,10 +43,534 @@ canvas {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-}
+} */
 
 /* faut modifier la couleur */
-#boardgame {
+/* #boardgame {
     background-color: white;
+} */
+
+
+body{
+
+    background:#090b13;
+    color:white;
+
 }
 
+#hero{
+
+    position:relative;
+    height:70vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+#backgroundCanvas{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(circle at top,#183b69,#090b13);
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.hero-content h1{
+
+    font-size:4rem;
+    font-weight:bold;
+
+}
+
+.hero-content p{
+
+    font-size:1.3rem;
+    opacity:.8;
+
+}
+
+.game-card{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.game-card img{
+
+    width:100%;
+    height:220px;
+
+    object-fit: fill;
+
+    transition:.4s;
+
+}
+
+.game-info{
+
+    padding:25px;
+
+}
+
+.game-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 0 30px rgba(0,150,255,.45);
+
+    border-color:#2d9cff;
+
+}
+
+.game-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.game-card button{
+
+    margin-top:10px;
+
+    width:100%;
+
+}
+
+section h2{
+
+    font-size:3rem;
+
+    color:#4da3ff;
+
+}
+
+.badge{
+
+    font-size:.8rem;
+
+    letter-spacing:1px;
+
+}
+
+#game-page{
+    min-height: calc(100vh - 80px);
+    padding:40px;
+    color:white;
+}
+
+
+/* HEADER */
+
+.game-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+
+.game-header h1{
+    font-size:48px;
+    margin-bottom:10px;
+    color:#72ff65;
+    text-shadow:0 0 20px #72ff65;
+}
+
+
+.game-header p{
+    color:#bbb;
+    font-size:18px;
+}
+
+
+
+/* LAYOUT */
+
+.game-layout{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    align-items:flex-start;
+
+}
+
+
+
+/* CARTE CANVAS */
+
+.game-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.03)
+    );
+
+    border-radius:20px;
+    padding:25px;
+
+    box-shadow:
+    0 0 40px rgba(0,0,0,.5);
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+.canvas-container{
+
+    border-radius:15px;
+    overflow:hidden;
+
+    background:#080808;
+
+    border:2px solid rgba(114,255,101,.3);
+
+}
+
+
+canvas{
+    display:block;
+}
+
+
+
+/* PANNEAU DROIT */
+
+.game-info{
+
+    width:280px;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+
+.info-box{
+
+    background:
+    rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+.info-box h3{
+
+    margin-top:0;
+    color:#72ff65;
+
+}
+
+
+
+.keys{
+
+    display:grid;
+    grid-template-columns:repeat(3,40px);
+    justify-content:center;
+    gap:8px;
+
+}
+
+
+.keys span{
+
+    background:#222;
+    padding:10px;
+    border-radius:8px;
+    text-align:center;
+
+}
+
+
+.restart-btn{
+
+    padding:15px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#72ff65;
+
+    color:#111;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.restart-btn:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px #72ff65;
+
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .game-layout{
+        flex-direction:column;
+        align-items:center;
+    }
+
+
+    canvas{
+        width:100%;
+        height:auto;
+    }
+
+
+}
+
+
+#morpion-layout{
+    display:flex;
+}
+
+
+.morpion-layout{
+
+    display:flex;
+    justify-content:center;
+    gap:40px;
+
+}
+
+
+
+/* PLATEAU */
+
+.morpion-card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    padding:30px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+
+#boardgame{
+
+    width:420px;
+    height:420px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+}
+
+
+
+#boardgame button{
+
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#111;
+
+    color:white;
+
+    font-size:60px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+
+    border:
+    2px solid rgba(255,255,255,.15);
+
+}
+
+
+
+#boardgame button:hover{
+
+    background:#222;
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* symbole joueur */
+
+.player1{
+
+    color:#4da6ff;
+
+}
+
+
+.player2{
+
+    color:#72ff65;
+
+}
+
+
+
+
+
+.mode-btn{
+
+    width:100%;
+
+    margin-bottom:10px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#222;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+
+.mode-btn:hover{
+
+    background:#72ff65;
+
+    color:#111;
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.morpion-layout{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+#boardgame{
+
+    width:90vw;
+
+    height:90vw;
+
+}
+
+
+}
+
+
+.canvas-container{
+
+    position:relative;
+
+}
+
+
+
+canvas{
+
+    cursor:crosshair;
+
+    background:
+    radial-gradient(
+        circle,
+        #222,
+        #050505
+    );
+
+}
+
+
+
+#score,
+#miss,
+#timer{
+
+    color:#72ff65;
+
+    font-weight:bold;
+
+    font-size:20px;
+
+}
