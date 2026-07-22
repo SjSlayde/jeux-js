@@ -10,7 +10,7 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand ms-2" href="/php/index.php">Canvas Arcade</a>
+    <a class="navbar-brand ms-2" href="/index.php">Canvas Arcade</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,22 +18,22 @@
         <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/index.php')echo 'active';  ?>" aria-current="page" href="index.php">Accueil</a>
+          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/index.php')echo 'active';  ?>" aria-current="page" href="index.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/snake.php')echo 'active';  ?>" href="snake.php">Snake</a>
+          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/snake.php')echo 'active';  ?>" href="snake.php">Snake</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/morpion.php')echo 'active';  ?>" href="morpion.php">Morpion</a>
+            <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/morpion.php')echo 'active';  ?>" href="morpion.php">Morpion</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/pierre_papier_ciseaux.php')echo 'active';  ?>" href="pierre_papier_ciseaux.php">Chifoumi</a>
+            <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/pierre_papier_ciseaux.php')echo 'active';  ?>" href="pierre_papier_ciseaux.php">Chifoumi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/ciblaim.php')echo 'active';  ?>" aria-current="page" href="ciblaim.php">Ciblaim</a>
+          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/ciblaim.php')echo 'active';  ?>" aria-current="page" href="ciblaim.php">Ciblaim</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/php/spaceinvader.php')echo 'active';  ?>" aria-current="page" href="spaceinvader.php">Space invader</a>
+          <a class="nav-link <?php if($_SERVER['REQUEST_URI']=='/spaceinvader.php')echo 'active';  ?>" aria-current="page" href="spaceinvader.php">Space invader</a>
         </li>
       </ul>
     </div>

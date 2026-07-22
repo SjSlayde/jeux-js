@@ -55,7 +55,7 @@ require_once("header.php");
 
             <a href="snake.php" class="game-card">
 
-                <img src="../image/image_jeux/snake2.png">
+                <img src="image/image_jeux/snake2.png">
 
                 <div class="game-info">
 
@@ -85,7 +85,7 @@ require_once("header.php");
 
             <a href="morpion.php" class="game-card">
 
-                <img src="../image/image_jeux/morpion2.png">
+                <img src="image/image_jeux/morpion2.png">
 
                 <div class="game-info">
 
@@ -115,7 +115,7 @@ require_once("header.php");
 
             <a href="pierre_papier_ciseaux.php" class="game-card">
 
-                <img src="../image/image_jeux/chifoumi2.png">
+                <img src="image/image_jeux/chifoumi2.png">
 
                 <div class="game-info">
 
@@ -145,7 +145,7 @@ require_once("header.php");
 
             <a href="ciblaim.php" class="game-card">
 
-                <img src="../image/image_jeux/ciblaim2.png">
+                <img src="image/image_jeux/ciblaim2.png">
 
                 <div class="game-info">
 
@@ -175,7 +175,7 @@ require_once("header.php");
 
             <a href="spaceinvader.php" class="game-card">
 
-                <img src="../image/image_jeux/space_invader2.png">
+                <img src="image/image_jeux/space_invader2.png">
 
                 <div class="game-info">
 
