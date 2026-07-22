@@ -1,6 +1,21 @@
-<footer>
+<footer class="site-footer">
+    <p>
+        © <?= date('Y') ?> Canvas Arcade
+    </p>
+
+    <nav class="footer-legal-links">
+        <a href="mentions-legales.php">
+            Mentions légales
+        </a>
+
+        <a href="confidentialite.php">
+            Confidentialité
+        </a>
+    </nav>
 
 </footer>
+    
+
 <script src="<?php if($_SERVER['REQUEST_URI']=='/php/morpion.php')echo '../js/morpion.js';
 else if($_SERVER['REQUEST_URI']=='/php/snake.php') echo '../js/snake.js'; 
 else if($_SERVER['REQUEST_URI']=='/php/pierre_papier_ciseaux.php')  echo '../js/pierre_papier_ciseaux.js';

@@ -639,3 +639,396 @@ canvas{
     font-weight:bold;
 
 }
+
+/* ======================================================
+   PAGES LÉGALES — CANVAS ARCADE
+====================================================== */
+
+.legal-page {
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: #f5f7f5;
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(65, 255, 135, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(52, 152, 255, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #060908 0%,
+            #0b110e 55%,
+            #070908 100%
+        );
+}
+
+.legal-hero {
+    width: min(100%, 1000px);
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.legal-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(102, 255, 145, 0.35);
+    border-radius: 999px;
+    color: #76ff9d;
+    background: rgba(102, 255, 145, 0.08);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.legal-hero h1 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: clamp(2.3rem, 6vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-shadow:
+        0 0 30px rgba(87, 255, 137, 0.18);
+}
+
+.legal-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #aeb9b1;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.legal-container {
+    width: min(100%, 1050px);
+    margin: auto;
+}
+
+.legal-card {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+    padding: 30px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    background: rgba(15, 22, 18, 0.78);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.legal-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(102, 255, 145, 0.22);
+}
+
+.legal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border: 1px solid rgba(102, 255, 145, 0.2);
+    border-radius: 18px;
+    background: rgba(102, 255, 145, 0.08);
+    font-size: 1.6rem;
+}
+
+.legal-content h2,
+.privacy-card h2,
+.privacy-summary h2 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: #ffffff;
+    font-size: 1.35rem;
+}
+
+.legal-content p,
+.privacy-card p,
+.privacy-summary p {
+    margin: 0 0 15px;
+    color: #b8c1bb;
+    line-height: 1.8;
+}
+
+.legal-content p:last-child,
+.privacy-card p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-list,
+.privacy-list {
+    padding: 0;
+    margin: 18px 0;
+    list-style: none;
+}
+
+.legal-list li,
+.privacy-list li {
+    position: relative;
+    padding: 10px 0 10px 26px;
+    color: #b8c1bb;
+    line-height: 1.6;
+}
+
+.legal-list li::before,
+.privacy-list li::before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #67ff93;
+    content: "›";
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.legal-page a {
+    color: #72ff9a;
+    text-decoration: none;
+}
+
+.legal-page a:hover {
+    text-decoration: underline;
+}
+
+.legal-note {
+    padding: 14px 16px;
+    border-left: 3px solid #66ff91;
+    border-radius: 0 12px 12px 0;
+    background: rgba(102, 255, 145, 0.06);
+    font-size: 0.92rem;
+}
+
+/* Résumé confidentialité */
+
+.privacy-summary {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 28px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(102, 255, 145, 0.25);
+    border-radius: 24px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(102, 255, 145, 0.13),
+            rgba(15, 22, 18, 0.85)
+        );
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.privacy-summary-icon {
+    flex: 0 0 auto;
+    font-size: 3rem;
+}
+
+.privacy-summary h2 {
+    margin-bottom: 8px;
+}
+
+.privacy-summary p {
+    margin: 0;
+}
+
+/* Grille confidentialité */
+
+.privacy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.privacy-card {
+    position: relative;
+    padding: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    background: rgba(15, 22, 18, 0.78);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.privacy-card::after {
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(102, 255, 145, 0.05);
+    content: "";
+}
+
+.privacy-status {
+    display: inline-block;
+    padding: 6px 10px;
+    margin-bottom: 22px;
+    border-radius: 999px;
+    color: #79ff9f;
+    background: rgba(102, 255, 145, 0.09);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.privacy-icon {
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.privacy-email {
+    display: inline-flex;
+    padding: 11px 16px;
+    border: 1px solid rgba(102, 255, 145, 0.25);
+    border-radius: 12px;
+    background: rgba(102, 255, 145, 0.08);
+}
+
+/* Navigation */
+
+.legal-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+.legal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 13px 22px;
+    border: 1px solid #70ff98;
+    border-radius: 14px;
+    color: #071009 !important;
+    background: #70ff98;
+    box-shadow:
+        0 10px 30px rgba(84, 255, 134, 0.16);
+    font-weight: 800;
+    text-decoration: none !important;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.legal-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 35px rgba(84, 255, 134, 0.25);
+}
+
+.legal-button-secondary {
+    color: #ecfff1 !important;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+
+    .legal-page {
+        padding: 55px 15px;
+    }
+
+    .legal-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+
+    .privacy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .privacy-summary {
+        align-items: flex-start;
+    }
+
+    .legal-navigation {
+        flex-direction: column;
+    }
+
+    .legal-button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .legal-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .privacy-summary {
+        flex-direction: column;
+    }
+
+    .legal-card,
+    .privacy-card {
+        border-radius: 18px;
+    }
+}
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 7%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #9ca79f;
+    background: #060908;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal-links a {
+    color: #b7c1ba;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #72ff9a;
+}
+
+@media screen and (max-width: 600px) {
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-legal-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
